@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="cards">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          User name
+        </mat-card-title>
+        <mat-card-subtitle>
+          User profession
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          Data de nascimento: {{ user.birthDate | date : "dd/MM/yyyy" }}
+        </p>
+        <p>
+          CPF: {{ user.documentNumber || "" | mask : "000.000.000-00" }}
+        </p>
+        <p>Email: {{ user.email }}</p>
+        <p>Senha: {{ user.password }}</p>
+        <p>Telefone: {{ user.phone }}</p>
+        <p>Renda mensal: {{ user.income | currency : "BRL" }}</p>
+        <mat-divider></mat-divider>
+        <p>Endereço</p>
+        <!-- <p>CEP: {{ user.address.zipCode | mask : "00000-000" }}</p> -->
+        <p>CEP: {{ user.address.zipCode | zipCodeMask }}</p>
+        <p>Rua: {{ user.address.street }}</p>
+        <p>Número: {{ user.address.number }}</p>
+        <p>Complemento: {{ user.address.complement || "-" }}</p>
+        <p>Bairro: {{ user.address.neighborhood }}</p>
+        <p>Cidade: {{ user.address.city }}</p>
+        <p>Estado: {{ user.address.state }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-flat-button color="danger">Excluir</button>
+        <button mat-flat-button color="primary">Editar</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

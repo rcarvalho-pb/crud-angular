@@ -1,0 +1,29 @@
+<div class="container" [ngClass]="css.formulario">
+    <mat-card class="example-card" [ngClass]="css.header">
+        <mat-card-header>
+          <mat-card-title>Login</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form action="" [ngClass]="css.inputs">
+                <mat-form-field appearance="outline">
+                    <mat-label>E-mail</mat-label>
+                    <input matInput [(ngModel)]="email" name="email">
+                    <mat-icon matSuffix>mail</mat-icon>
+                  </mat-form-field>
+                  <mat-form-field appearance="outline">
+                    <mat-label>Senha</mat-label>
+                    <input matInput [(ngModel)]="password" name="password">
+                    <mat-icon matSuffix>lock</mat-icon>
+                  </mat-form-field>
+                  <button
+                    [ngClass]="css.button"
+                    (click)="login($event)"
+                    mat-raised-button color="primary"
+                  >
+                    Entrar
+                  </button>
+            </form>
+        </mat-card-content>
+      </mat-card>
+</div>
+<a routerLink="/users">click here</a>
